@@ -1,0 +1,20 @@
+Empresa: (nombre de la empresa)
+Ej:
+CaX
+
+Razon: (Situación por la cual se realizó el cambio)
+Ej:
+-Creación del Doc_B, revisión del Doc_A
+
+Cambio: (Explicación rápida del cambio)
+Ej:
+-Se modifico el Doc_A
+
+Documentos involucrados: (Documentos que sean modificados, eliminados o agregados)
+Ej:
+-Doc_A
+-Doc_B
+
+Descripción detallada:(Descripción mas al detalle del cambio realizado de cada documento)
+Ej:
+-En el Doc_A ....
