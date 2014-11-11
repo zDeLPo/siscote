@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="siscote"/>
+  <table-filter match-name="autor"/>
+  <table-filter match-name="especialidad"/>
+  <table-filter match-name="documento"/>
+  <table-filter match-name="tema"/>
+  <table-filter match-name="categoria"/>
+  <table-filter match-name="roles"/>
+  <table-filter match-name="documento_has_tema"/>
+  <table-filter match-name="documento_has_autor"/>
+  <table-filter match-name="usuario"/>
+</hibernate-reverse-engineering>
