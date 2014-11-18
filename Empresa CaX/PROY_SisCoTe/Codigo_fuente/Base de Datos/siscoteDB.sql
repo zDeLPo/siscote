@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2014 a las 06:25:29
+-- Tiempo de generación: 18-11-2014 a las 15:34:31
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -177,6 +177,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Nombres` varchar(45) NOT NULL,
   `ApellidoPaterno` varchar(45) NOT NULL,
   `ApellidoMaterno` varchar(45) NOT NULL,
+  `DNI` varchar(8) NOT NULL,
+  `FechaRegistro` date NOT NULL,
+  `Correo` varchar(20) NOT NULL,
   `Estado` tinyint(1) NOT NULL,
   `Roles_idRoles` int(11) NOT NULL,
   PRIMARY KEY (`idUsuario`),
@@ -184,17 +187,21 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `Username_UNIQUE` (`Username`),
   UNIQUE KEY `Password_UNIQUE` (`Password`),
   UNIQUE KEY `COdigo_UNIQUE` (`Codigo`),
-  KEY `fk_Usuario_Roles_idx` (`Roles_idRoles`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  UNIQUE KEY `DNI_2` (`DNI`),
+  UNIQUE KEY `Correo` (`Correo`),
+  KEY `fk_Usuario_Roles_idx` (`Roles_idRoles`),
+  KEY `DNI` (`DNI`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `Codigo`, `Username`, `Password`, `Nombres`, `ApellidoPaterno`, `ApellidoMaterno`, `Estado`, `Roles_idRoles`) VALUES
-(3, '10200054', 'andxxi', 'pikachu', 'Andre', 'Calderon', 'Maguiña', 1, 3),
-(4, '10200216', 'akira', '123', 'akira', 'tabuchi', 'yagui', 0, 4),
-(5, '09200152', 'lilirafer', '456', 'liliana', 'ramirez', 'fernandez', 1, 5);
+INSERT INTO `usuario` (`idUsuario`, `Codigo`, `Username`, `Password`, `Nombres`, `ApellidoPaterno`, `ApellidoMaterno`, `DNI`, `FechaRegistro`, `Correo`, `Estado`, `Roles_idRoles`) VALUES
+(3, '10200054', 'andxxi', 'pikachu', 'Andre', 'Calderon', 'Maguiña', '70674560', '2014-11-18', 'andxxi@gmail.com', 1, 3),
+(4, '10200216', 'akira', '123', 'akira', 'tabuchi', 'yagui', '98765432', '2014-11-18', 'akirataya@gmail.com', 1, 4),
+(5, '09200152', 'lilirafer', '456', 'liliana', 'ramirez', 'fernandez', '12345648', '2014-11-18', 'lilirafer@gmail.com', 1, 5),
+(7, '12345678', 'qwerty', '12345', 'qwerty', 'rty', 'uio', '12345678', '2014-11-18', 'poiu', 1, 3);
 
 --
 -- Restricciones para tablas volcadas
