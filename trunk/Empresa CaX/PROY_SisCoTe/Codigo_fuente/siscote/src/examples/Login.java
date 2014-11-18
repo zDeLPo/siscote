@@ -171,7 +171,7 @@ public class Login extends javax.swing.JFrame {
         } else{
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new AdCuentas().setVisible(true);
+                    new MenuPrincipal().setVisible(true);
                 }
             });
             this.setVisible(false);
