@@ -7,6 +7,7 @@ package examples;
 import dao.UsuarioDao;
 import dao.impl.UsuarioDaoImpl;
 import dominio.Usuario;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -140,7 +141,19 @@ public class AdCuentas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                final DetallesCuenta dialog = new DetallesCuenta(new javax.swing.JFrame(), true,usuarios.get(TablaUsuario.getSelectedRow()));
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        dialog.removeAll();
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
