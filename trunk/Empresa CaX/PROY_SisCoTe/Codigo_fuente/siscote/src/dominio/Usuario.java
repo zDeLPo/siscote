@@ -2,6 +2,7 @@ package dominio;
 // Generated 5/11/2014 06:32:33 PM by Hibernate Tools 3.2.1.GA
 
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 /**
@@ -32,6 +35,9 @@ public class Usuario  implements java.io.Serializable {
      private String nombres;
      private String apellidoPaterno;
      private String apellidoMaterno;
+     private String DNI;
+     private Date fechaRegistro;
+     private String correo;
      private boolean estado;
 
     public Usuario() {
@@ -56,6 +62,22 @@ public class Usuario  implements java.io.Serializable {
        this.apellidoMaterno = apellidoMaterno;
        this.estado = estado;
     }
+
+    public Usuario(String username, String password, String nombres,
+            String apellidoPaterno, String apellidoMaterno, String DNI,
+            Date fechaRegistro, String correo, boolean estado, Roles roles) {
+        this.codigo = DNI;
+        this.username = username;
+        this.password = password;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.DNI = DNI;
+        this.fechaRegistro = fechaRegistro;
+        this.correo = correo;
+        this.estado = estado;
+        this.roles = roles;
+    }  
    
      @Id @GeneratedValue(strategy=IDENTITY)
     
@@ -129,6 +151,34 @@ public class Usuario  implements java.io.Serializable {
     
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
+    }
+    
+    @Column(name="DNI", nullable=false, length=8)
+    public String getDNI() {
+        return this.DNI;
+    }
+    
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="FechaRegistro", nullable=false, length=19)
+    public Date getFechaRegistro() {
+        return this.fechaRegistro;
+    }
+    
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+    
+    @Column(name="Correo", nullable=false, length=20)
+    public String getCorreo() {
+        return this.correo;
+    }
+    
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
     
     @Column(name="Estado", nullable=false)
