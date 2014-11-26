@@ -32,9 +32,9 @@ public class DetallesCuenta extends javax.swing.JDialog {
                 +usuario.getApellidoMaterno()+", "+usuario.getNombres());
         
         DLabel.setText(usuario.getDNI());
-        CLabel.setText(usuario.getCorreo());
+        DLabel.setText(usuario.getCorreo());
         ULabel.setText(usuario.getUsername());
-        FLabel.setText(df.format(usuario.getFechaRegistro()));
+        ULabel.setText(df.format(usuario.getFechaRegistro()));
         ELabel.setText(Boolean.toString(usuario.isEstado()));
         
     }
@@ -143,11 +143,12 @@ public class DetallesCuenta extends javax.swing.JDialog {
                     .addComponent(jLabel1)
                     .addComponent(NLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel4)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
